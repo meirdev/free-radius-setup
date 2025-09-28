@@ -1,0 +1,25 @@
+services:
+
+  postgres:
+    image: postgres:17.6
+    restart: always
+    environment:
+      POSTGRES_USER: radius
+      POSTGRES_PASSWORD: radpass
+      POSTGRES_DB: radius
+    ports:
+      - 5432:5432
+    volumes:
+      - ./raddb/mods-config/sql/main/postgresql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  radius:
+    build:
+      context: .
+    restart: always
+    ports:
+      - 1812:1812/udp
+      - 1813:1813/udp
+    volumes:
+      - ./raddb:/usr/local/etc/raddb
+    depends_on:
+      - postgres
