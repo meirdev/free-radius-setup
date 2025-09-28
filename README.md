@@ -44,6 +44,7 @@ Acct-Session-Id = "hello"
 Acct-Status-Type = Start
 NAS-IP-Address = 10.201.0.3
 NAS-Port = 0
+Framed-IP-Address = 84.108.22.82
 EOF
 ```
 
@@ -70,3 +71,9 @@ NAS-IP-Address = 10.201.0.3
 NAS-Port = 0
 EOF
 ```
+
+## RADIUS Authentication, Authorization, and Accounting Process
+
+![RADIUS Authentication, Authorization, and Accounting Process](./radius-protocol.png)
+
+[Source](https://support.huawei.com/enterprise/en/doc/EDOC1100086516/5d7d8319/how-does-radius-work)
